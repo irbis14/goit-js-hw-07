@@ -1,3 +1,8 @@
+#gallery {
+  display: flex;
+  padding: 0;
+}
+
 .gallery-item {
   list-style: none;
   padding: 10px;
@@ -6,4 +11,5 @@
 .gallery-img {
   display: block;
   height: 300px;
+  width: 100%;
 }

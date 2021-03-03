@@ -18,9 +18,10 @@ const images = [
 
 const listRef = document.querySelector('#gallery');
 
-const addImages = (list) => list.forEach(list => {
-    listRef.insertAdjacentHTML('beforeend',
-        `<li class="gallery-item"><img class="gallery-img" src="${list.url}" alt="${list.alt}"/></li>`);
-});
+const createGalleryItem = (image) => {
+  return `<li class="gallery-item"><img class="gallery-img" src="${image.url}" alt="${image.alt}"></li>`;
+};
 
-addImages(images)
+const createGallery = images.map(createGalleryItem).join('');
+
+listRef.insertAdjacentHTML('afterbegin', createGallery);
